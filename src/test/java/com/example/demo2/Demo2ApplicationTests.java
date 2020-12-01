@@ -42,7 +42,7 @@ public class Demo2ApplicationTests {
     }
     @Test
     void contextLoads2() throws InterruptedException, ExecutionException, TimeoutException {
-        System.out.println("县城名城："+Thread.currentThread().getName());
+       /* System.out.println("县城名城："+Thread.currentThread().getName());
         Future<List<TPayBill>> submit = threadPoolTaskExecutor.submit(
                 new Callable<List<TPayBill>>() {
                     @Override
@@ -56,6 +56,8 @@ public class Demo2ApplicationTests {
         List<TPayBill> tPayBills = submit.get(5, TimeUnit.SECONDS);
         System.out.println(tPayBills);
         //System.out.println(indexService.queryList());
-
+*/
+        System.out.println(threadPoolTaskExecutor);
+        System.out.println(threadPoolTaskExecutor);
     }
 }

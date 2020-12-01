@@ -3,6 +3,7 @@ package com.example.wzb.pool;
 import com.example.wzb.properties.ThreadPoolProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 /**
  *  @author: wangzongben
