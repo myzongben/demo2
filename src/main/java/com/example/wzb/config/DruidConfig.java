@@ -14,7 +14,14 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-
+/**
+ *  @author: wangzongben
+ *  @Date: 2021/7/20 10:14
+ *  @Description:
+ *  http://127.0.0.1:8888/wzb/druid/index.html
+ *  admin
+ *  123456
+ */
 @Configuration
 public class DruidConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger(DruidConfig.class);

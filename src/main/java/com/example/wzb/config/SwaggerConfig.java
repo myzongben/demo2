@@ -8,7 +8,7 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 /**
  *  @author: wangzongben
@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  *  @Description:集成swagger UI的配置类
  */
 @Configuration
-@EnableSwagger2
+@EnableSwagger2WebMvc
 public class SwaggerConfig {
     @Bean
     //固定写法，方法名api自定义
@@ -37,9 +37,10 @@ public class SwaggerConfig {
     private ApiInfo apiInfo(){
         //swagger界面标题，联系人（含姓名，链接，邮箱），描述，版本，最后build这个文件
         return new ApiInfoBuilder().title("项目接口列表")
-                .contact(new Contact("wangzongben","https://github.com/myzongben/demo2","myzongben@126.com"))
                 .description("这是swaggerui生成的接口文档")
                 .version("1.0.0.0")
+                .contact(new Contact("项目API接口","localhost:8888/wzb/doc.html","myzongben@126.com"))
+                .license("renxiaoyou")
                 .build();
 
 
