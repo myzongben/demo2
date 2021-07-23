@@ -5,13 +5,10 @@ import com.example.wzb.service.IndexService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @Api(value = "这是IndexController")
 public class IndexController {
@@ -22,9 +19,10 @@ public class IndexController {
         return "/index";
     }
 
-    @RequestMapping(value = "/list",method = RequestMethod.GET)
-    @ApiOperation(value = "列表方法",httpMethod = "GET")
-    public List<TPayBill>  list(){
+    @RequestMapping(value = "/list",method = RequestMethod.POST)
+    @ApiOperation(value = "列表方法",httpMethod = "POST")
+    public List<TPayBill>  list(String account, String checkPass){
+
         return indexService.queryList();
     }
 }
