@@ -4,7 +4,7 @@ import com.example.wzb.entity.Jiyixian;
 
 import java.util.List;
 
-public interface JiyixianService {
+public interface JiyixianService  {
     List<Jiyixian> queryList();
     void insert(Jiyixian jiyixian);
     void delete(Long id);

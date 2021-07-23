@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 //@Mapper
-public interface Indexmapper {
+public interface IndexMapper {
     @Select("select * from t_pay_bill")
     List<TPayBill> queryList();
 }

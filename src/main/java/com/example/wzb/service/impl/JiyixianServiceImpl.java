@@ -1,10 +1,7 @@
 package com.example.wzb.service.impl;
 
 import com.example.wzb.entity.Jiyixian;
-import com.example.wzb.entity.TPayBill;
-import com.example.wzb.mapper.Indexmapper;
-import com.example.wzb.mapper.Jiyixianmapper;
-import com.example.wzb.service.IndexService;
+import com.example.wzb.mapper.JiyixianMapper;
 import com.example.wzb.service.JiyixianService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,19 +9,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class JiyixianServiceImpl implements JiyixianService {
+public class JiyixianServiceImpl  implements JiyixianService {
    @Autowired
-   private Jiyixianmapper jiyixianmapper;
+   private JiyixianMapper jiyixianmapper;
 
 
     @Override
     public List<Jiyixian> queryList() {
-        return jiyixianmapper.queryList();
+        return jiyixianmapper.queryList(new Jiyixian());
     }
 
     @Override
     public void insert(Jiyixian jiyixian) {
-        jiyixianmapper.insert(jiyixian);
+        jiyixianmapper.add(jiyixian);
     }
 
     @Override
