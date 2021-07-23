@@ -2,7 +2,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.wzb.entity.Jiyixian;
 import com.example.wzb.mapper.CommonMapper;
 import com.example.wzb.service.JiyixianService;
-import com.example.wzb.service.impl.CommonService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,7 +9,7 @@ import java.util.List;
 
 public class Test1 extends CommonTest {
     @Autowired
-    private CommonMapper<Jiyixian> commonMapper;
+    private CommonMapper commonMapper;
 
     @Autowired
     private JiyixianService jiyixianService;

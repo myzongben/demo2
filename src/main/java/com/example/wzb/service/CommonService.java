@@ -1,4 +1,4 @@
-package com.example.wzb.service.impl;
+package com.example.wzb.service;
 
 public interface CommonService<T>  {
 }

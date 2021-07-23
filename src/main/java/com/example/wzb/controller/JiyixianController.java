@@ -3,7 +3,7 @@ package com.example.wzb.controller;
 import com.example.wzb.entity.Jiyixian;
 import com.example.wzb.paramDTO.Result;
 import com.example.wzb.service.JiyixianService;
-import com.example.wzb.service.impl.CommonService;
+import com.example.wzb.service.CommonService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
