@@ -11,9 +11,9 @@ import java.util.List;
 public interface JiyixianMapper {
 
     List<Jiyixian> queryList(Jiyixian jiyixian);
-    @Insert("INSERT INTO wzb_jiyixian(message,url,other)  VALUES (#{message}, #{url}, #{other}) ")
+    @Insert("INSERT INTO wzb_jiyixian(message,url,create_time,shangxian_time,redmine_no,other)  VALUES (#{message}, #{url}, #{other}) ")
     void add(Jiyixian jiyixian);
-    @Update("update wzb_jiyixian set message=#{message}, url=#{url} , other=#{other} where id=#{id}")
+    @Update("update wzb_jiyixian set message=#{message}, url=#{url} ,shangxian_time=#{shangxian_time},redmine_no=#{redmine_no} other=#{other} where id=#{id}")
     void update(Jiyixian jiyixian);
 
 

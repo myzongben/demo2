@@ -17,4 +17,7 @@ public class Jiyixian implements Serializable {
     private String other;
     private String create_time;
     private String update_time;
+    private String shangxian_time;
+    private Long redmine_no;
+
 }

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -25,14 +26,14 @@ public class JiyixianController {
  *  @Date: 2021/7/23 10:46
  *  @Description:  前段是{ddd:dd,...}这类参数，后台接收时，采用@RequestBody
  */
-    @RequestMapping(value = "/list",method = RequestMethod.POST)
-    @ApiOperation(value = "列表方法",httpMethod = "POST")
-    public Result  list(@RequestBody Jiyixian jiyixian){
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
+    @ApiOperation(value = "列表方法",httpMethod = "GET")
+    public Result  list( Jiyixian jiyixian){
         try {
             //QueryWrapper<Jiyixian> wrapper = new QueryWrapper<>();
             //List list = commonService.list(wrapper);
-
-            return Result.ok(null);
+            List<Jiyixian> jiyixians = indexService.queryList();
+            return Result.ok(jiyixians);
         } catch (Exception e) {
             e.printStackTrace();
            return  Result.fail(500,e.getMessage());
