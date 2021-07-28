@@ -2,7 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.wzb.mapper.JiyixianMapper">
     <select id="queryList"  parameterType="com.example.wzb.entity.Jiyixian" resultType="com.example.wzb.entity.Jiyixian">
-        select * from aigou.wzb_jiyixian
+        select * from wzb_jiyixian
+        <where>
+            <if test = " id != null ">
+                and id = #{id}
+            </if>
+            <if test = " message != null and message != '' ">
+                and message = #{message}
+            </if>
+             <if test = " redmine_no != null  ">
+                and redmine_no = #{redmine_no}
+            </if>
+             <if test = " shangxian_time != null and shangxian_time != '' ">
+                and shangxian_time = #{shangxian_time}
+            </if>
+
+        </where>
     </select>
 
 

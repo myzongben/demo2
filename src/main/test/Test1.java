@@ -21,8 +21,8 @@ public class Test1 extends CommonTest {
     }
     @Test
     public void test2(){
-        List<Jiyixian> jiyixians = jiyixianService.queryList();
+        //List<Jiyixian> jiyixians = jiyixianService.queryList();
 
-        System.out.println("list = " + jiyixians);
+        //System.out.println("list = " + jiyixians);
     }
 }

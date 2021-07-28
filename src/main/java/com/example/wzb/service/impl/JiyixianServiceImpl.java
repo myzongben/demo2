@@ -15,8 +15,8 @@ public class JiyixianServiceImpl  implements JiyixianService {
 
 
     @Override
-    public List<Jiyixian> queryList() {
-        return jiyixianmapper.queryList(new Jiyixian());
+    public List<Jiyixian> queryList(Jiyixian jiyixian) {
+        return jiyixianmapper.queryList(jiyixian);
     }
 
     @Override

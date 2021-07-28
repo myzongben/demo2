@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -30,9 +32,7 @@ public class JiyixianController {
     @ApiOperation(value = "列表方法",httpMethod = "GET")
     public Result  list( Jiyixian jiyixian){
         try {
-            //QueryWrapper<Jiyixian> wrapper = new QueryWrapper<>();
-            //List list = commonService.list(wrapper);
-            List<Jiyixian> jiyixians = indexService.queryList();
+            List<Jiyixian> jiyixians = indexService.queryList(jiyixian);
             return Result.ok(jiyixians);
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,9 +41,11 @@ public class JiyixianController {
     }
     @RequestMapping(value = "/insert",method = RequestMethod.POST)
     @ApiOperation(value = "新增",httpMethod = "POST")
-    public Result insert(Jiyixian jiyixian){
+    public Result insert(@RequestBody Jiyixian jiyixian){
 
         try {
+            SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+            jiyixian.setCreate_time(simpleDateFormat.format(new Date()));
             indexService.insert(jiyixian);
           return  Result.ok(null);
         } catch (Exception e) {
@@ -53,7 +55,7 @@ public class JiyixianController {
     }
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ApiOperation(value = "修改",httpMethod = "POST")
-    public Result update(Jiyixian jiyixian){
+    public Result update(@RequestBody Jiyixian jiyixian){
         try {
             indexService.update(jiyixian);
             return Result.ok(null);
