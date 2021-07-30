@@ -8,7 +8,7 @@
                 and id = #{id}
             </if>
             <if test = " message != null and message != '' ">
-                and message = #{message}
+                and message like '%${message}%'
             </if>
              <if test = " redmine_no != null  ">
                 and redmine_no = #{redmine_no}
