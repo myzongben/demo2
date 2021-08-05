@@ -57,11 +57,11 @@
             <scope>test</scope>
         </dependency>
         <!--mybatias 代码生成器依赖包-->
-        <dependency>
+      <!--  <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
             <version>1.3.5</version>
-        </dependency>
+        </dependency>-->
         <!--引入的Alibaba Druid连接池监控服务等都用到了log4j，否则启动会报错，说找不到log4j-->
         <dependency>
             <groupId>log4j</groupId>
@@ -141,7 +141,7 @@
             </plugin>
 
             <!--添加mybatis generator maven插件-->
-          <plugin>
+       <!--   <plugin>
                     <groupId>org.mybatis.generator</groupId>
                     <artifactId>mybatis-generator-maven-plugin</artifactId>
                     <version>1.3.5</version>
@@ -167,7 +167,7 @@
                             <phase>generate-sources</phase>
                         </execution>
                     </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
